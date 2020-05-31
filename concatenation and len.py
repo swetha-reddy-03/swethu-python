@@ -8,3 +8,15 @@ print(d)
 print(len(a))
 print(len(b))
 print(len(c))
+
+
+
+output:
+  
+pythonjava
+pnja
+6
+4
+10
+
+  
