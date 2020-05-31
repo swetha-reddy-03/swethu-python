@@ -9,3 +9,16 @@ hello
 im learning
 python
 ''')
+
+output:
+  
+  helo world
+python
+java
+i'm swetha
+today many of people suffering with diseases "pollution" is the main reason
+hi
+hello
+im learning
+python
+  
