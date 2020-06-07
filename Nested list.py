@@ -1,0 +1,12 @@
+list1=[[1,2,3],4,5,6,[8,9],[[44,55,66],[66,77],["hello","python","welcome"]]]
+print(list1[-1][0][1])
+print(list1[0][-1])
+print(list1[2])
+print(list1[4][-1])
+print(list1[-1][1][-1])
+print(list1[-1][0][0])
+print(list1[-1][-1][-1])
+print(list1[-1][-1][-1][3:])
+print(list1[-1][-1][1][1:4])
+print(list1[-1][-1][0][2:])
+print(list1[-1][-1][1],list1[-1][-1][-1])
