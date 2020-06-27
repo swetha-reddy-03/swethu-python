@@ -8,7 +8,8 @@ print("Options are : \n"
       "4.Tuple \n"
       "5.Dictionary \n"
       "6.Set \n"
-      "7.Data structure")
+      "7.Data structure \n"
+      "8.Exit")
 
 while True:
     user=int(input("select the option : "))
@@ -27,10 +28,11 @@ while True:
         choice='Set'
     elif user==7:
         choice='Data structure'
+    elif user==8:
+        choice='Exit'
     else:
-        print("In valid")
+        print("In valid...please select valid one")
         
-    print("user choice is : " + choice)
     
 #operations in Numbers
     
@@ -44,14 +46,14 @@ while True:
               "5. Modulus \n"
               "6. Exponential \n"
               "7. Floor division \n"
-              "8. equals to \n"
-              "9. not equals to \n"
-              "10. greaterthan \n"
-              "11. graterthan or equalsto \n"
-              "12. lessthan \n"
-              "13. lessthan or equalsto \n"
-              "14. int \n"
-              "15. float \n"
+              "8. Prime number \n"
+              "9. Factorial \n"
+              "10. Armstrong \n"
+              "11. Even number \n"
+              "12. Odd number \n"
+              "13. palindrome \n"
+              "14. Negative value \n"
+              "15. Positive value \n"
               "16. Fibonacci \n"
               "17. Go to the main menu \n"
               "18. Exit from the program \n")
@@ -62,6 +64,7 @@ while True:
 
         #Doing addition operation
         if user_numbers==1:
+            number_choice='Addition'
             print("Welcome to Addition operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
@@ -71,6 +74,7 @@ while True:
         #conditions for multiplication operation
             
         elif user_numbers==2:
+            number_choice='Multiplication'
             print("Welcome to Multiplication operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
@@ -80,6 +84,7 @@ while True:
         #conditions for substraction operation
             
         elif user_numbers==3:
+            number_choice='Subtraction'
             print("Welcome to subtraction operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
@@ -89,6 +94,7 @@ while True:
         #conditions for division operation
             
         elif user_numbers==4:
+            number_choice='Division'
             print("Welcome to Division operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
@@ -98,6 +104,7 @@ while True:
         #conditions for Modulus operation
             
         elif user_numbers==5:
+            number_choice='Modulus'
             print("Welcome to Modulus operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
@@ -107,6 +114,7 @@ while True:
         #conditions for Exponential operation
             
         elif user_numbers==6:
+            number_choice='Exponential'
             print("Welcome to Exponential operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
@@ -116,73 +124,122 @@ while True:
         #conditions for floordivision operation
             
         elif user_numbers==7:
+            number_choice='Floor division'
             print("Welcome to Floor division operation")
             num1=int(input("Enter the first number : "))
             num2=int(input("Enter the second number : "))
             num3=num1//num2
             print(num3)
 
-        #conditions for equals to operation
+        #conditions for prime number operation
             
         elif user_numbers==8:
-            print("Welcome to equalsto operation")
-            num1=int(input("Enter the first number : "))
-            num2=int(input("Enter the second number : "))
-            print(num1==num2)
+            number_choice='Prime number'
+            print("Welcome to Prime number operation")
+            n = int(input("Enter a number: "))
+            for i in range(2,n-1):
+                if n % i == 0:
+                    print(n,"not a prime number")
+                    break
+            else:
+                print(n,"prime number")
 
-        #conditions for not equals to operation
+        #conditions for Factorial operation
             
         elif user_numbers==9:
-            print("Welcome to not equals to operation")
-            num1=int(input("Enter the first number : "))
-            num2=int(input("Enter the second number : "))
-            print(num1!=num2)
+            number_choice='Factorial'
+            print("Welcome to Factorial operation")
+            num = int(input("Enter the Number: "))
+            print("Factors of a Given Number {0} are:".format(num))
 
-        #conditions for greaterthan operation
+            for value in range(1, num + 1):
+                if(num%value == 0):
+                    print("{0}".format(value))
+
+        #conditions for Armstrong operation
             
         elif user_numbers==10:
-            print("Welcome to greaterthan operation")
-            num1=int(input("Enter the first number : "))
-            num2=int(input("Enter the second number : "))
-            print(num1>num2)
+            number_choice='Armstrong'
+            print("Welcome to Armstrong number operation")
+            num=int(input("Enter the number: "))
+            sum=0
+            dig=0
 
-        #conditions for greaterthan or equalsto operation
+            temp=num
+            while temp>0:
+                dig=dig+1
+                temp=temp//10
+            temp=num
+            for n in range (1,temp+1):
+                rem=temp%10
+                sum=sum+(rem**dig)
+                temp//=10
+            if num==sum:
+                print(num,"is armstrong number")
+            else:
+                print(num,"is not an armstrong number")
+
+        #conditions for even number operation
             
         elif user_numbers==11:
-            print("Welcome to greaterthan or equalsto operation")
-            num1=int(input("Enter the first number : "))
-            num2=int(input("Enter the second number : "))
-            print(num1>=num2)
+            number_choice='Even number'
+            print("Welcome to even number operation")
+            num=int(input("Enter the number: "))
+            if num%2==0:
+                print("The given number is even")
+            else:
+                print("The given number is not even")
 
-        #conditions for lessthan operation
+        #conditions for odd number operation
             
         elif user_numbers==12:
-            print("Welcome to lessthan operation")
-            num1=int(input("Enter the first number : "))
-            num2=int(input("Enter the second number : "))
-            print(num1<num2)
+            number_choice='Odd number'
+            print("Welcome to Odd number operation")
+            num1=int(input("Enter the number : "))
+            if num%2!=0:
+                print("The given number is odd")
+            else:
+                print("the given number is not odd")
 
-        #conditions for lessthan or equals to operation
+        #conditions for palindrome operation
             
         elif user_numbers==13:
-            print("Welcome to lessthan or equals to operation")
-            num1=int(input("Enter the first number : "))
-            num2=int(input("Enter the second number : "))
-            print(num1<=num2)
+            number_choice='Palindrome'
+            print("Welcome to palindrome operation")
+            def palindrome(a):
+                return a[::-1]
+            b=input("Enter the number: ")
+            if palindrome(b)==b:
+                print(b,"is palindrome")
+            else:
+                print(b,"is not palindrome")
 
-        #conditions for check given value is integer or not
+        #conditions for check given value is negative or not
            
         elif user_numbers==14:
-            print("check given value is integer or not")
-            num=int(input("Enter the number : "))
-            print(type(num))
+            number_choice='Negative'
+            print("check given value is negative or not")
+            def negative(a):
+                return(a)
+            num=int(input("Enter the number: "))
+            if negative(num)<0:
+                print("The number is negative")
+            else:
+                print("the number is not negative")
+            
              
-        #conditions for check given value is float or not
+        #conditions for check given value is positive or not
             
         elif user_numbers==15:
-            print("check given value is float or not")
-            num=float(input("Enter the number : "))
-            print(type(num))
+            number_choice='Positive'
+            print("check given value is positive or not")
+            def positive(a):
+                return(a)
+            num=int(input("Enter the number: "))
+            if positive(num)>0:
+                print("The number is positve")
+            else:
+                print("the number is not positive")
 
         #conditions for fibonacci operation
             
@@ -208,16 +265,18 @@ while True:
                 
         elif user_numbers==17:
             number_choice='Go to the main menu'
-            print(user)
+            print("Welcome to main menu")
 
         #conditions for Exit from the program
             
         elif user_numbers==18:
             number_choice='Exit from the program'
             print("Exit from the program")
+            break
+
         else:
-            print("In valid")
-        break
+            print("In valid...please select the valid option")
+    
 
     #Operations in string
     
@@ -227,7 +286,7 @@ while True:
               "1. capitalize \n"
               "2. count \n"
               "3. find \n"
-              "4. cooncatenation \n"
+              "4. concatenation \n"
               "5. index \n"
               "6. upper \n"
               "7. lower \n"
@@ -371,9 +430,10 @@ while True:
             str=input("Enter the number : ")
             x=len(str)
             print("length of the string : ",x)
+            
         else:
-            print("In valid")
-        break
+            print("In valid...please select the valid option")
+
 
     #operations in List
     
@@ -644,9 +704,10 @@ while True:
             Dyn_list.sort()
             print(Dyn_list)
             
+
         else:
-            print("In valid")
-        break
+            print("In valid...please select the valid option")
+        
     #operations in Tuple
     
     if user==4:
@@ -756,9 +817,9 @@ while True:
             del x
             print(x)
             
+
         else:
-            print("In valid")
-        break
+            print("In valid...please select the valid option")
 
     #operations of Dictionary
     if user==5:
@@ -1118,10 +1179,9 @@ while True:
             
             z=new_dict.values()
             print(z)
-            
+        
         else:
-            print("In valid")
-        break
+            print("In valid... please select valid option")
 
     #operations in Set
     
@@ -1498,8 +1558,13 @@ while True:
             prin(z)
             
         else:
-            print("In valid")
+            print("In valid...please select valid option")
+
+    #condition for exit the program
+    if user==8:
+        print("Exit")
         break
+        
         
             
         
